@@ -13,7 +13,8 @@ def createModel(xTrain):
   model.add(layers.MaxPooling1D(pool_size=3, strides=2))
   model.add(layers.LSTM(16))
   model.add(layers.Dense(units=2, activation="softmax"))
-  model.compile(loss="categorical_crossentropy", optimizer=optimizers.Adam(learning_rate=0.01), metrics=['acc'])
+  #model.compile(loss="categorical_crossentropy", optimizer=optimizers.Adam(learning_rate=0.01), metrics=['acc'])
+  model.compile(loss="categorical_crossentropy", optimizer=optimizers.Adam(learning_rate=0.005), metrics=['acc']) #learning_rate 0.01 -> 0.005 -> 0.001 => accuracy 0.8935 -> 0.9305 -> 0.908
 
   return model
 
