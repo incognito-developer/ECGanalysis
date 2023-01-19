@@ -28,14 +28,14 @@ if gpus:
 
 
 normalData = pd.read_csv(baseDatasetPath + "ptbdb_normal.csv")
-print(normalData)
+#print(normalData)
 abnormalData = pd.read_csv(baseDatasetPath + "ptbdb_abnormal.csv")
 
 normalData = np.array(normalData)
 abnormalData = np.array(abnormalData)
 
-print("normalData:", normalData.shape, "\n", normalData)
-print("abnormalData:",abnormalData.shape, "\n", abnormalData)
+#print("normalData:", normalData.shape, "\n", normalData)
+#print("abnormalData:",abnormalData.shape, "\n", abnormalData)
 
 
 
@@ -56,6 +56,15 @@ yVal = np.concatenate((np.zeros(valNumbers,), np.ones(valNumbers,)),0)
 xTest = np.concatenate((normalData[trainNumbers+valNumbers:trainNumbers+valNumbers+testNumbers,:], abnormalData[trainNumbers+valNumbers:trainNumbers+valNumbers+testNumbers,:]),0)
 yTest = np.concatenate((np.zeros(testNumbers,), np.ones(testNumbers,)),0)
 
+print("xTrain.shape: ", xTrain.shape,"yTrain.shape: ", yTrain.shape)
+print("xVal.shape: ", xVal.shape,"yVal.shape: ", yVal.shape)
+print("xTest.shape: ", xTest.shape,"yTest.shape: ", yTest.shape)
+
+
+#merge Train and Validation data(because of using model.fit(validation_split)
+xTrain = np.concatenate((xTrain,xVal),0)
+yTrain = np.concatenate((yTrain,yVal),0)
+print("merge Train and Validation")
 print("xTrain.shape: ", xTrain.shape,"yTrain.shape: ", yTrain.shape)
 print("xVal.shape: ", xVal.shape,"yVal.shape: ", yVal.shape)
 print("xTest.shape: ", xTest.shape,"yTest.shape: ", yTest.shape)
@@ -87,9 +96,9 @@ model = createModel.createModel(xTrain) #createModel.py
 #cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path, verbose=1, save_weights_only=True, period=5)
 #model.save_weights(checkpoint_path.format(epoch=0))
 
-es = tf.keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience= 10)
+es = tf.keras.callbacks.EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience= 20)
 mc = tf.keras.callbacks.ModelCheckpoint(baseCheckPointPath+'best_model.h5', monitor = 'val_acc', mode='max', verbose=1, save_best_only=True)
-history=model.fit(xTrain, yTrain, epochs = 1000, batch_size=batchSize, validation_split=0.2, callbacks=[es,mc])
+history=model.fit(xTrain, yTrain, epochs = 10000, batch_size=batchSize, validation_split=0.2, callbacks=[es,mc])
 
 
 
@@ -132,6 +141,7 @@ o = np.argmax(o,1) #output: 0 or 1
 #print("o: ", o)
 
 yTest = np.argmax(yTest,1)
+print("\n!!!WARNING: accuracy could change with same data because of dropout layer!!!")
 print("yTest accuracy : ", sum(np.equal(yTest,o))/len(yTest))
 
 
