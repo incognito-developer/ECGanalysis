@@ -48,7 +48,7 @@ def main(file1,file2,debugMode=False):
         print(loadModel.predict_classes(data))
         for i in range (data.shape[0]):
             #print(data[0])
-            print("data ", i,"predict result: ", predictResult(loadModel.predict_classes(np.expand_dims(data[i],axis=0))))
+            print("data ", i,"predict result: ", predictResult(loadModel.predict_classes(np.expand_dims(data[i],axis=0))), "predict: ", np.max(loadModel.predict(np.expand_dims(data[i],axis=0)))*100,"%")
         
 def predictResult(predictClass):
     if predictClass == 0:
