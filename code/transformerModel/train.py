@@ -49,7 +49,8 @@ label = np.split(data,data.shape[1],axis=1)[data.shape[1]-1]
 data = np.delete(data,data.shape[1]-1,1)
 
 from sklearn.model_selection import train_test_split
-xTrain, xTest, yTrain, yTest = train_test_split(data, label, test_size=0.10)
+xTrain, xTest, yTrain, yTest = train_test_split(data, label, test_size=0.10,shuffle=True,stratify=label)
+#print(yTest)
 
 
 
@@ -59,9 +60,9 @@ print("data.shape: ", data.shape,"label.shape: ", label.shape)
 #Converts a class vector (integers) to binary class matrix.
 #to make output numbers 2
 #because to match output matrix
-#from tensorflow.keras.utils import to_categorical
-#yTest = to_categorical(yTest)
-#yTrain = to_categorical(yTrain)
+from tensorflow.keras.utils import to_categorical
+yTest = to_categorical(yTest)
+yTrain = to_categorical(yTrain)
 #yVal = to_categorical(yVal)
 #print(xTest)
 xTest = np.expand_dims(xTest, -1)
@@ -82,7 +83,8 @@ from tensorflow.keras import optimizers
 from tensorflow.keras import layers
 from tensorflow import keras
 
-n_classes = len(np.unique(xTrain))
+n_classes = len(np.unique(yTrain))
+print("n_classes: ", n_classes)
 
 
 def transformer_encoder(inputs, head_size, num_heads, ff_dim, dropout=0):
@@ -127,18 +129,18 @@ input_shape = xTrain.shape[1:]
 
 model = build_model(
     input_shape,
-    head_size=384,#default=256 #head_size = num_heads * batchsize
-    num_heads=6,#default=4
-    ff_dim=6,#default=4
-    num_transformer_blocks=6,#default=4
+    head_size=256,#default=256 -> 384 #head_size = num_heads * batchsize
+    num_heads=4,#default=4 -> 6
+    ff_dim=4,#default=4 -> 6
+    num_transformer_blocks=4,#default=4 -> 6
     mlp_units=[128],#default=128
     mlp_dropout=0.4,#default=0.4
     dropout=0.25,#default=0.25
 )
 
 model.compile(
-    loss="sparse_categorical_crossentropy",
-    #loss="categorical_crossentropy",
+    #loss="sparse_categorical_crossentropy",
+    loss="categorical_crossentropy",
     optimizer=keras.optimizers.Adam(learning_rate=1e-4),
     #metrics=["sparse_categorical_accuracy"],
     metrics=["acc"],
@@ -224,9 +226,9 @@ print("\taccuracy : ", sum(np.equal(yTest,o))/len(yTest))
 '''
 
 #to calculate performance Evaluation
-performanceEvaluation.performanceEvaluation(xTest,yTest,model)
+#performanceEvaluation.performanceEvaluation(xTest,yTest,model)
 
-'''
+
 #to get performance evaluation: https://machinelearningmastery.com/how-to-calculate-precision-recall-f1-and-more-for-deep-learning-models/
 # demonstration of calculating metrics for a neural network model using sklearn
 from sklearn.metrics import accuracy_score
@@ -280,5 +282,5 @@ print('\tROC AUC: %f' % auc)
 matrix = confusion_matrix(yTest, yhat_classes)
 print("\tmatrix:\n\tPredictive Values(positive, negative)\n\tActual Values(positive, \n\t\t\tnegative)"),
 print("\t\t\t\t",matrix[0],"\n\t\t\t\t",matrix[1])
-'''
+
 model.save(baseModelPath+'ecgTrainModel.h5')
