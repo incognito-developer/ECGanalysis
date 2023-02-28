@@ -76,6 +76,7 @@ print(xTrain.shape, yTrain.shape)
 
 #deepLearning model
 model = createModel.createModel(xTrain) #createModel.py
+tf.keras.utils.plot_model(model, to_file='cnnLstm.png',show_shapes=True)
 
 # use checkpoint to save models during train
 #reference: https://www.tensorflow.org/tutorials/keras/save_and_load?hl=ko
