@@ -147,6 +147,7 @@ model.compile(
     #metrics=["categorical_accuracy"],
 )
 model.summary()
+tf.keras.utils.plot_model(model, to_file='cnnLstm.png',show_shapes=True)
 
 #callbacks = [keras.callbacks.EarlyStopping(patience=10, restore_best_weights=True)]
 
