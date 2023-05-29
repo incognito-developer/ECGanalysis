@@ -20,10 +20,9 @@ modelName="ecgTrainBasicModel.h5"
 batchsize=128
 
 
-''' #use when you run on multi-user environment
 #to use gpu efficient
 #os.environ["CUDA_VISIBLE_DEVICES"]="2"
-
+'''
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
     try:
