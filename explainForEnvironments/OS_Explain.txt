@@ -3,3 +3,5 @@ GPU: 4070TI
 GPU-Driver: 525.105.17
 CUDA: 11.8
 RAM: DDR4 32GB
+
+Using conda environment to training
