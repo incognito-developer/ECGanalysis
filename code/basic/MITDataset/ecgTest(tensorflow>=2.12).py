@@ -49,10 +49,11 @@ def main(file1,file2,debugMode=False, eraseLastColumn=False):
         print(loadModel.predict(data))
         for i in range (data.shape[0]):
             #print(data[0])
-            print("data ", i,"predict result: ", predictResult(loadModel.predict(np.expand_dims(data[i],axis=0))), "predict: ", np.max(loadModel.predict(np.expand_dims(data[i],axis=0)))*100,"%")
+            #print(np.argmax(loadModel.predict(np.expand_dims(data[i],axis=0)),axis=1))
+            print("data ", i,"predict result: ", predictResult(np.argmax(loadModel.predict(np.expand_dims(data[i],axis=0),verbose=0),axis=1)), "predict: ", np.max(loadModel.predict(np.expand_dims(data[i],axis=0),verbose=0))*100,"%")
         
 def predictResult(predictClass):
-    if (predictClass == 0).all():
+    if predictClass == 0:
         return "normal"
     else:
         return" abnormal"
