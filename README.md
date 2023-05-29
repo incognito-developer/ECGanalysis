@@ -7,7 +7,7 @@ This project are under developing.
 
 
 목적: ECG데이터를 학습하고 테스트 하는 것을 위한 프로젝트입니다. </br>
-Purpose: learning and test model for Ecg data.
+Purpose: training and test model for ECG data.
 
 소스코드는 아직 보기좋게 정리하지 않았습니다. 주석에 달린 링크를 보고 수정하시면 될 것 같습니다.
 Source codes are not yet nicely organized. Please edit codes with comments.
