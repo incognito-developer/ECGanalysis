@@ -6,3 +6,6 @@ RAM: DDR4 32GB
 
 Using conda environment to training & test.
 anaconda version: conda 23.5.0
+export env: conda env export > requirements.yaml
+import env: conda env create -f requirements.yaml
+
