@@ -4,19 +4,21 @@ import pandas as pd
 import tensorflow as tf
 import os
 
-import createModel #createModel.py
+#import createModel #createModel.py
 import performanceEvaluation #performanceEvaluation.py
 
 #useDataset: https://www.kaggle.com/shayanfazeli/heartbeat
 
 #to setup environments
-gpuID = 2
-baseDatasetPath = "../dataset/"
+gpuID = 0
+#baseDatasetPath = "../dataset/"
+baseDatasetPath = "./"
 basePltSavePath = "./plots/"
 baseModelPath = "./models/"
 baseCheckPointPath = baseModelPath + "checkPoints/"
 batchSize = 64 #default = 64
 
+''' #using when multi-user environment
 #to use gpu efficient
 #os.environ["CUDA_VISIBLE_DEVICES"]="2"
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -27,7 +29,7 @@ if gpus:
   except RuntimeError as e:
     # 프로그램 시작시에 메모리 증가가 설정되어야만 합니다
     print(e)
-
+'''
 
 #normalData = pd.read_csv(baseDatasetPath + "ptbdb_normal.csv",header=None)
 #print(normalData)
