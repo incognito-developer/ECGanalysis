@@ -1,3 +1,4 @@
+#This program can run every models. Ensemble, Transformer, Dropout, Basic Models are compatible. 
 import numpy as np
 import pandas as pd
 import tensorflow as tf
