@@ -12,10 +12,10 @@ Purpose: training and test model for ECG data.
 소스코드는 아직 보기좋게 정리하지 않았습니다. 주석에 달린 링크를 보고 수정하시면 될 것 같습니다.</br>
 Source codes are not yet nicely organized. Please edit codes with comments.
 
-상업적 이용 금지. 이 프로젝트로 인해 발생한 문제점은 책임지지 않습니다.
+Lisence 파일보다 이 글이 우선합니다. 상업적 이용 금지. 이 프로젝트로 인해 발생한 문제점은 책임지지 않습니다.
 참고나 수정 시 원본 출처를 명확히 달아주십시오. 
 Issues에 이 프로젝트를 참고한 repository를 알려주시면 감사합니다.</br>
-No commercial use. We are not responsible for any problems caused by this project.
+This article takes precedence over the license file. No commercial use. We are not responsible for any problems caused by this project.
 When making references or modifications, please clearly indicate the original source.
 Thank you for letting us know the repository that referenced this project in Issues.
 
