@@ -23,7 +23,7 @@ Thank you for letting us know the repository that referenced this project in Iss
 The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/heartbeat.
 
 기타 문의사항이나 문제는 issues에 남겨주세요.</br>
-Please leave a message if you have any questions or problem.
+Please leave a message at issues if you have any questions or problem.
 
 
 # related project
