@@ -27,4 +27,5 @@ Please leave a message at issues if you have any questions or problem.
 
 
 # related project
+web version:
 https://github.com/incognito-developer/ecgAnalysisUsingML
