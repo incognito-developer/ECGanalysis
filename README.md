@@ -2,8 +2,8 @@
 to practice about analysis ECG data
 
 
-개발중인 프로젝트입니다. 실행은 정상적으로 의도한대로 작동합니다.</br>
-This project are under developing. You can run this code now as intended.
+개발이 끝난 프로젝트입니다. 실행은 정상적으로 의도한대로 작동합니다.</br>만약 코드에 문제가 있거나, 필요한 개선 사항이 있다면 issues에 남겨주세요.</br> 확인후 수정을 하겠습니다.
+This project has been developed. You can run this code now as intended.</br> If you have any problems or if you need any improvements with code, please leave them in issues.</br> I'll check and edit them.  
 
 
 목적: ECG데이터를 학습하고 테스트 하는 것을 위한 프로젝트입니다. </br>
