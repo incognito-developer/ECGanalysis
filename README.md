@@ -29,3 +29,8 @@ Please leave a message at [blog](https://incognito-developer.github.io/posts/202
 # related project
 web version:
 https://github.com/incognito-developer/ecgAnalysisUsingML
+
+
+# related paper
+blog:
+https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations
