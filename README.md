@@ -22,8 +22,8 @@ Thank you for letting us know the repository that referenced this project in Iss
 이 프로젝트의 데이터셋은 https://www.kaggle.com/datasets/shayanfazeli/heartbeat 를 사용했습니다.</br>
 The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/heartbeat.
 
-기타 문의사항이나 문제는 issues에 남겨주세요.</br>
-Please leave a message at issues if you have any questions or problem.
+기타 문의사항이나 문제는 [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations)의 댓글에 남겨주세요.</br>
+Please leave a message at [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations) comments if you have any questions or problem.
 
 
 # related project
