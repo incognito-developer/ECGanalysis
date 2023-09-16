@@ -6,6 +6,7 @@ to practice about analysis ECG data
 https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations
 
 
+
 개발이 끝난 프로젝트입니다. 실행은 정상적으로 의도한대로 작동합니다.</br>만약 코드에 문제가 있거나, 필요한 개선 사항이 있다면 [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations) 댓글에 남겨주세요.</br> 확인후 수정을 하겠습니다.</br>
 This project has been developed. You can run this code now as intended.</br> If you have any problems or if you need any improvements with code, please leave them in [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations) comments.</br> I'll check and edit them.  
 
