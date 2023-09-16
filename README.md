@@ -2,7 +2,7 @@
 to practice about analysis ECG data
 
 
-### project Informations
+# project Informations
 https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations
 
 
