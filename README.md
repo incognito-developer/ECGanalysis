@@ -30,6 +30,11 @@ The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/hea
 기타 문의사항이나 문제는 [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations)의 댓글에 남겨주세요.</br>
 Please leave a message at [blog](https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations) comments if you have any questions or problem.
 
+# Usage(사용방법)
+1. build your env with ECGanalysis-main/explainForEnvironments/requirements.yaml
+2. The codes which in `ECGanalysis-main/code` are final code. These codes are working with whole models, so you can test whole model with `ecgTest.py` and `performanceEvaluation.py`.
+3. Directories under `ECGanalysis-main/code/` such as `basic`, `basicWithDropout`... are models directory. You can check models train result, models, layers, and so on.
+4. you should edit codes to match your environments. please check and edit these parts. `#to setup enviornments` and `if __name__=="__main__"`
 
 # related project
 web version:
